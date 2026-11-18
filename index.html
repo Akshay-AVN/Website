@@ -142,6 +142,26 @@
     .map { border-radius: 16px; overflow: hidden; border: 1px solid var(--line); aspect-ratio: 16/10; background: var(--leaf-3); }
     .map iframe { width: 100%; height: 100%; border: 0; display: block; }
 
+
+    /* Photo slider */
+    .gallery { padding-top: 0; }
+    .slider { position: relative; }
+    .track { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding: 4px 2px 8px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+    .track::-webkit-scrollbar { display: none; }
+    .slide { flex: 0 0 calc((100% - 32px) / 3); scroll-snap-align: start; margin: 0; position: relative; border-radius: 22px; overflow: hidden; background: var(--leaf-3); aspect-ratio: 3/4; box-shadow: 0 10px 30px rgba(31, 77, 46, .12); }
+    .slide img { width: 100%; height: 100%; object-fit: cover; }
+    .slide figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 40px 18px 16px; color: #fff; font-weight: 600; font-size: 1.02rem; background: linear-gradient(180deg, transparent, rgba(0, 0, 0, .65)); }
+    .slide figcaption small { display: block; font-weight: 400; font-size: .85rem; opacity: .9; }
+    .nav-btn { position: absolute; top: calc(50% - 22px); width: 44px; height: 44px; border-radius: 50%; border: 0; background: rgba(255, 255, 255, .95); color: var(--leaf); box-shadow: 0 4px 14px rgba(0, 0, 0, .18); display: grid; place-items: center; cursor: pointer; z-index: 2; }
+    .nav-btn:hover { background: #fff; }
+    .nav-btn svg { width: 22px; height: 22px; }
+    .nav-btn.prev { left: -10px; } .nav-btn.next { right: -10px; }
+    .dots { display: flex; justify-content: center; gap: 8px; margin-top: 14px; }
+    .dots button { width: 9px; height: 9px; padding: 0; border-radius: 999px; border: 0; background: #c5d1c1; cursor: pointer; transition: width .2s, background .2s; }
+    .dots button[aria-current="true"] { width: 26px; background: var(--leaf); }
+    @media (max-width: 900px) { .slide { flex-basis: calc((100% - 16px) / 2); } .nav-btn.prev { left: 6px; } .nav-btn.next { right: 6px; } }
+    @media (max-width: 520px) { .slide { flex-basis: 86%; } .track { gap: 12px; } }
+
     footer { background: var(--leaf); color: #dfe9dc; padding: 28px 0 90px; font-size: .9rem; }
     footer .row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
     footer a { color: #fff; }
@@ -174,7 +194,7 @@
       .bar .btn { padding: 10px 12px; }
       .brand span { display: none; }
     }
-    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } .track { scroll-behavior: auto; } }
   </style>
 </head>
 <body>
@@ -238,6 +258,29 @@
       </div>
     </section>
 
+
+    <section id="gallery" class="gallery" aria-label="Where our plates are used">
+      <div class="wrap">
+        <div class="head">
+          <div class="eyebrow">Made for every table</div>
+          <h2>From tiffin centres to wedding halls</h2>
+        </div>
+        <div class="slider">
+          <button class="nav-btn prev" type="button" aria-label="Previous photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+          <div class="track" tabindex="0">
+          <figure class="slide"><img src="use-tiffin-600.webp" srcset="use-tiffin-600.webp 600w, use-tiffin-1000.webp 1000w" sizes="(min-width: 900px) 360px, (min-width: 520px) 50vw, 86vw" alt="A tiffin centre counter with stacks of green leaf plates and idli, vada and dosa served on them" width="600" height="804" loading="lazy" /><figcaption>Tiffin centres &amp; hotels<small>Idli, vada and dosa served on leaf plates</small></figcaption></figure>
+          <figure class="slide"><img src="use-wedding-600.webp" srcset="use-wedding-600.webp 600w, use-wedding-1000.webp 1000w" sizes="(min-width: 900px) 360px, (min-width: 520px) 50vw, 86vw" alt="A wedding buffet with tall stacks of leaf plates and guests holding full meals" width="600" height="804" loading="lazy" /><figcaption>Weddings &amp; functions<small>Full meals for hundreds of guests</small></figcaption></figure>
+          <figure class="slide"><img src="use-kitchen-600.webp" srcset="use-kitchen-600.webp 600w, use-kitchen-1000.webp 1000w" sizes="(min-width: 900px) 360px, (min-width: 520px) 50vw, 86vw" alt="A catering kitchen with stacks of leaf plates and meals plated for service" width="600" height="804" loading="lazy" /><figcaption>Catering kitchens<small>Stacked and ready for service</small></figcaption></figure>
+          <figure class="slide"><img src="use-catering-600.webp" srcset="use-catering-600.webp 600w, use-catering-1000.webp 1000w" sizes="(min-width: 900px) 360px, (min-width: 520px) 50vw, 86vw" alt="A large kitchen serving full meals of rice, curries and sweets on leaf plates" width="600" height="804" loading="lazy" /><figcaption>Bulk meal service<small>Rice, curries and sweets — one strong plate</small></figcaption></figure>
+          <figure class="slide"><img src="use-packed-600.webp" srcset="use-packed-600.webp 600w, use-packed-1000.webp 1000w" sizes="(min-width: 900px) 360px, (min-width: 520px) 50vw, 86vw" alt="Stacks of AVN Bio Products leaf plates, wrapped and labelled, ready for delivery" width="600" height="804" loading="lazy" /><figcaption>Packed &amp; ready to deliver<small>Wrapped in stacks with the AVN label</small></figcaption></figure>
+          <figure class="slide"><img src="use-home-600.webp" srcset="use-home-600.webp 600w, use-home-1000.webp 1000w" sizes="(min-width: 900px) 360px, (min-width: 520px) 50vw, 86vw" alt="A home kitchen with a stack of leaf plates and family meals served on them" width="600" height="804" loading="lazy" /><figcaption>Family meals at home<small>Poojas, festivals and everyday meals</small></figcaption></figure>
+          </div>
+          <button class="nav-btn next" type="button" aria-label="Next photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+        </div>
+        <div class="dots" role="group" aria-label="Choose photo"></div>
+      </div>
+    </section>
+
     <section id="products" class="products">
       <div class="wrap">
         <div class="head">
@@ -252,7 +295,7 @@
           <article class="prod"><div class="size big">14″</div><h3>14″ Sitting Plate</h3><p>Large leaf plate on a paper base for full meals.</p><a href="#quote" data-plate="14″ Sitting Plate">Get a price →</a></article>
         </div>
         <div class="bulk">
-          <img src="packed-700.webp" alt="Stacks of leaf plates packed for bulk orders" width="700" height="933" loading="lazy" />
+          <img src="use-packed-600.webp" srcset="use-packed-600.webp 600w, use-packed-1000.webp 1000w" sizes="(min-width: 900px) 300px, 100vw" alt="AVN Bio Products leaf plates packed in labelled stacks for bulk orders" width="600" height="804" loading="lazy" />
           <div>
             <h3>Bulk orders for every occasion</h3>
             <p>Tell us the plate size, how many you need and the date — we'll confirm the price and when it can be ready.</p>
@@ -318,6 +361,28 @@
 
   <script>
     document.getElementById('yr').textContent = new Date().getFullYear();
+    // Photo slider: moves one photo at a time every 4 seconds; pauses while someone is touching or hovering it.
+    (function () {
+      var track = document.querySelector('.track'); if (!track) return;
+      var slides = [].slice.call(track.children), dotsBox = document.querySelector('.dots');
+      var step = function () { return slides[1].offsetLeft - slides[0].offsetLeft; };
+      var index = function () { return Math.round(track.scrollLeft / step()); };
+      var last = function () { return Math.max(0, Math.round((track.scrollWidth - track.clientWidth) / step())); };
+      var go = function (i) { var n = last(); if (i > n) i = 0; if (i < 0) i = n; track.scrollTo({ left: i * step() }); mark(i); };
+      var dots = slides.map(function (_, i) { var b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-label', 'Photo ' + (i + 1)); b.onclick = function () { go(i); restart(); }; dotsBox.appendChild(b); return b; });
+      var mark = function (to) { var i = typeof to === 'number' ? to : index(), n = last(); dots.forEach(function (d, j) { d.style.display = j > n ? 'none' : ''; d.setAttribute('aria-current', j === Math.min(i, n) ? 'true' : 'false'); }); };
+      var mt = null; track.addEventListener('scroll', function () { clearTimeout(mt); mt = setTimeout(function () { mark(); }, 120); }, { passive: true });
+      window.addEventListener('resize', function () { mark(); }); mark();
+      document.querySelector('.nav-btn.prev').onclick = function () { go(index() - 1); restart(); };
+      document.querySelector('.nav-btn.next').onclick = function () { go(index() + 1); restart(); };
+      var timer = null, paused = false;
+      var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      function restart() { clearInterval(timer); if (!still) timer = setInterval(function () { if (!paused && !document.hidden) go(index() + 1); }, 4000); }
+      ['mouseenter', 'touchstart', 'focusin'].forEach(function (e) { track.parentNode.addEventListener(e, function () { paused = true; }, { passive: true }); });
+      ['mouseleave', 'touchend', 'focusout'].forEach(function (e) { track.parentNode.addEventListener(e, function () { paused = false; }, { passive: true }); });
+      restart();
+    })();
+
     // "Get a price" on a plate picks that plate in the form.
     document.querySelectorAll('[data-plate]').forEach(function (a) {
       a.addEventListener('click', function () { document.querySelector('#quote-form select[name=plate]').value = a.dataset.plate; });
