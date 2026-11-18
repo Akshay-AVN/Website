@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AVN Bio Products — Natural Leaf Plates, Hanamkonda</title>
-  <meta name="description" content="AVN Bio Products makes natural leaf plates in Hanamkonda, Telangana — 12″ and 14″ leaf plates and sitting plates in bulk for caterers, functions, temples, hotels and shops. Call or WhatsApp 91212 45654." />
+  <meta name="description" content="AVN Bio Products makes natural leaf plates in Hanamkonda, Telangana — 8″–14″ leaf plates, breakfast plates and prasadam cups in bulk for caterers, functions, temples, hotels and shops. Call or WhatsApp 91212 45654." />
   <link rel="canonical" href="https://avnbioproducts.com/" />
   <meta name="theme-color" content="#1f4d2e" />
   <link rel="icon" type="image/png" href="favicon-32.png" />
@@ -20,7 +20,7 @@
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "AVN Bio Products",
-    "description": "Manufacturer and supplier of natural leaf plates in Hanamkonda, Telangana.",
+    "description": "Manufacturer and supplier of natural leaf plates, breakfast plates and prasadam cups in Hanamkonda, Telangana.",
     "url": "https://avnbioproducts.com/",
     "logo": "https://avnbioproducts.com/logo-160.png",
     "image": "https://avnbioproducts.com/og.jpg",
@@ -143,6 +143,21 @@
     .map iframe { width: 100%; height: 100%; border: 0; display: block; }
 
 
+
+    /* Photo product cards */
+    .sub-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin: 40px 0 16px; }
+    .sub-head h3 { font-size: 1.35rem; color: var(--leaf); }
+    .photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .pcard { border: 1px solid var(--line); border-radius: var(--radius); background: var(--sage); overflow: hidden; display: flex; flex-direction: column; }
+    .pcard img { width: 100%; height: auto; aspect-ratio: 4/3; object-fit: cover; background: var(--leaf-3); }
+    .pcard .body { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+    .pcard .tag { align-self: flex-start; font-size: .75rem; font-weight: 700; color: var(--leaf); background: var(--leaf-3); border-radius: 999px; padding: 3px 10px; }
+    .pcard p { color: var(--muted); font-size: .95rem; flex: 1; }
+    .pcard a { font-weight: 600; color: var(--leaf); text-decoration: none; font-size: .95rem; }
+    .pcard a:hover { text-decoration: underline; }
+    @media (max-width: 900px) { .photo-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 520px) { .photo-grid { grid-template-columns: 1fr; } }
+
     /* Photo slider */
     .gallery { padding-top: 0; }
     .slider { position: relative; }
@@ -215,7 +230,7 @@
         <div><b>AVN Bio Products</b><span>Natural leaf plates · Hanamkonda</span></div>
       </a>
       <nav class="links" aria-label="Sections">
-        <a href="#products">Plates</a><a href="#order">How to order</a><a href="#quote">Get a quote</a><a href="#visit">Visit us</a>
+        <a href="#products">Products</a><a href="#order">How to order</a><a href="#quote">Get a quote</a><a href="#visit">Visit us</a>
       </nav>
       <a class="btn btn-call" href="tel:+919121245654" aria-label="Call 91212 45654"><svg><use href="#i-phone" /></svg><span>91212 45654</span></a>
     </div>
@@ -227,7 +242,7 @@
         <div>
           <div class="eyebrow">AVN Bio Leaf · Eco-friendly products</div>
           <h1>Natural leaf plates for every meal and celebration</h1>
-          <p class="lead">Made in Hanamkonda, Telangana. Strong 12″ and 14″ leaf plates, supplied in bulk for caterers, function halls, temples, hotels and shops.</p>
+          <p class="lead">Made in Hanamkonda, Telangana. Leaf plates from 8″ to 14″ and prasadam cups, supplied in bulk for caterers, function halls, temples, hotels and shops.</p>
           <div class="cta">
             <a class="btn btn-wa" href="https://wa.me/919121245654?text=Hello%20AVN%20Bio%20Products%2C%20I%27d%20like%20a%20price%20for%20leaf%20plates." target="_blank" rel="noopener"><svg><use href="#i-wa" /></svg>WhatsApp for a price</a>
             <a class="btn btn-call" href="tel:+919121245654"><svg><use href="#i-phone" /></svg>Call 91212 45654</a>
@@ -284,8 +299,8 @@
     <section id="products" class="products">
       <div class="wrap">
         <div class="head">
-          <div class="eyebrow">Our plates</div>
-          <h2>Choose your size</h2>
+          <div class="eyebrow">Our products</div>
+          <h2>Plates and cups for every need</h2>
           <p class="lead">Prices depend on quantity and the season's leaf rates — message us for today's price.</p>
         </div>
         <div class="prod-grid">
@@ -293,6 +308,15 @@
           <article class="prod"><div class="size big">14″</div><h3>14″ Leaf Plate</h3><p>Full-meal size for weddings, functions and catering.</p><a href="#quote" data-plate="14″ Leaf Plate">Get a price →</a></article>
           <article class="prod"><div class="size">12″</div><h3>12″ Sitting Plate</h3><p>Leaf pressed on a paper base — a lighter option for regular use.</p><a href="#quote" data-plate="12″ Sitting Plate">Get a price →</a></article>
           <article class="prod"><div class="size big">14″</div><h3>14″ Sitting Plate</h3><p>Large leaf plate on a paper base for full meals.</p><a href="#quote" data-plate="14″ Sitting Plate">Get a price →</a></article>
+        </div>
+        <div class="sub-head"><h3>Breakfast plates &amp; prasadam cups</h3></div>
+        <div class="photo-grid">
+          <article class="pcard"><img src="prod-breakfast-8-480.webp" srcset="prod-breakfast-8-480.webp 480w, prod-breakfast-8-800.webp 800w" sizes="(min-width: 900px) 360px, (min-width: 520px) 50vw, 100vw" alt="8 inch leaf breakfast plate with idli, vada, pongal, chutney and sambar" width="480" height="358" loading="lazy" />
+            <div class="body"><span class="tag">8″</span><h3>8″ Breakfast Plate</h3><p>Just right for idli, vada, pongal and upma with chutney — ideal for tiffin centres and hotels.</p><a href="#quote" data-plate="8″ Breakfast Plate">Get a price →</a></div></article>
+          <article class="pcard"><img src="prod-breakfast-10-480.webp" srcset="prod-breakfast-10-480.webp 480w, prod-breakfast-10-800.webp 800w" sizes="(min-width: 900px) 360px, (min-width: 520px) 50vw, 100vw" alt="10 inch leaf breakfast plate with dosa, idli, vada, pongal, chutney and sambar" width="480" height="358" loading="lazy" />
+            <div class="body"><span class="tag">10″</span><h3>10″ Breakfast Plate</h3><p>Room for a full tiffin — dosa, idli, vada and sides on one plate.</p><a href="#quote" data-plate="10″ Breakfast Plate">Get a price →</a></div></article>
+          <article class="pcard"><img src="prod-prasadam-cups-480.webp" srcset="prod-prasadam-cups-480.webp 480w, prod-prasadam-cups-800.webp 800w" sizes="(min-width: 900px) 360px, (min-width: 520px) 50vw, 100vw" alt="Leaf prasadam cups holding kesari, boondi, and coconut with banana" width="480" height="358" loading="lazy" />
+            <div class="body"><span class="tag">Cups</span><h3>Prasadam Cups</h3><p>Leaf cups for prasadam, sweets, payasam and temple offerings — poojas, festivals and annadanam.</p><a href="#quote" data-plate="Prasadam Cups">Get a price →</a></div></article>
         </div>
         <div class="bulk">
           <img src="use-packed-600.webp" srcset="use-packed-600.webp 600w, use-packed-1000.webp 1000w" sizes="(min-width: 900px) 300px, 100vw" alt="AVN Bio Products leaf plates packed in labelled stacks for bulk orders" width="600" height="804" loading="lazy" />
@@ -324,7 +348,7 @@
           <p class="small">This opens WhatsApp with your details filled in — nothing is stored on this website.</p>
           <form id="quote-form">
             <label class="full">Your name<input name="name" autocomplete="name" required placeholder="e.g. Ravi Kumar" /></label>
-            <label>Plate<select name="plate"><option>14″ Leaf Plate</option><option>12″ Leaf Plate</option><option>14″ Sitting Plate</option><option>12″ Sitting Plate</option><option>Not sure — please suggest</option></select></label>
+            <label>Product<select name="plate"><option>14″ Leaf Plate</option><option>12″ Leaf Plate</option><option>14″ Sitting Plate</option><option>12″ Sitting Plate</option><option>10″ Breakfast Plate</option><option>8″ Breakfast Plate</option><option>Prasadam Cups</option><option>Not sure — please suggest</option></select></label>
             <label>Quantity<input name="qty" inputmode="numeric" placeholder="e.g. 5000" /></label>
             <label>Needed by<input name="date" type="date" /></label>
             <label>Place / area<input name="place" placeholder="e.g. Warangal" /></label>
@@ -392,7 +416,7 @@
       e.preventDefault();
       var f = e.target, v = function (n) { return (f.elements[n].value || '').trim(); };
       var d = v('date') ? new Date(v('date') + 'T00:00:00').toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }) : '';
-      var lines = ['Hello AVN Bio Products, I would like a price.', 'Name: ' + v('name'), 'Plate: ' + v('plate')];
+      var lines = ['Hello AVN Bio Products, I would like a price.', 'Name: ' + v('name'), 'Product: ' + v('plate')];
       if (v('qty')) lines.push('Quantity: ' + v('qty'));
       if (d) lines.push('Needed by: ' + d);
       if (v('place')) lines.push('Place: ' + v('place'));
